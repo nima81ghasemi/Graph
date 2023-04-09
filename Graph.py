@@ -1,5 +1,5 @@
 """
-Graph V1.00
+Graph V1.01
 created by Nima
 email: Nima81ghasemi@proton.me
 
@@ -8,12 +8,14 @@ notes:
     program will create a graph (adjacency list) for you
 """
 
+
 class Graph:
     def __init__(self, edges):
         self.edges = edges
         self.graph_dictionary = dict()
 
-    def create_graph_dictionary(self, list):
+    def create_graph_dictionary(self):
+        list = self.edges
         for i in range(len(list)):
             first_item = list[i][0]
             second_item = list[i][1]
@@ -23,6 +25,7 @@ class Graph:
             else:
                 self.graph_dictionary[first_item].append(second_item)
         return self.graph_dictionary
+
 
 routes = [
     ('Kerman', 'Yazd'),
@@ -35,8 +38,8 @@ routes = [
 
 # testing program
 
-test = Graph(1)
-print(test.create_graph_dictionary(routes))
+test = Graph(routes)
+print(test.create_graph_dictionary())
 """
 result will be this:
 
